@@ -21,7 +21,7 @@ class yfinance():
 
         return data
 
-    def get_data_yfinance_H(symbol):
+    def get_data_yfinance_2H(symbol):
         data = yf.download(symbol, interval='1h')
 
         data_H = data.resample('2H').agg({
