@@ -20,7 +20,8 @@ class yfinance():
         data = data.rename(columns={'Date': 'date', 'Open': 'open', 'High': 'high', 'Low': 'low', 'Close': 'close', 'Volume': 'volume', 'Adj Close': 'adj_close'})
 
         return data
-
+    
+    # 
     def get_data_yfinance_2H(symbol):
         data = yf.download(symbol, interval='1h')
 
