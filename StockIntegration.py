@@ -21,7 +21,6 @@ class yfinance():
 
         return data
     
-    # 
     def get_data_yfinance_2H(symbol):
         data = yf.download(symbol, interval='1h')
 
