@@ -47,6 +47,7 @@ class MeanReversion():
                 data.at[index, 'signal'] = -1
 
         return data
+    
 
 
 
