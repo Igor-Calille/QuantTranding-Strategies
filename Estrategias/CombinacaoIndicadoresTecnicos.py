@@ -30,16 +30,22 @@ class MeanReversion():
                     data[f'RSI_{periodo}'] = it.IndicadoresTecnicos().computar_RSI(data['close'], periodo)
 
         if bollinger_periodo is not None:
-            if not isinstance(rsi_periodo, list):
+            if not isinstance(bollinger_periodo, list):
                 raise ValueError("bollinger_periodo deve ser uma lista de inteiros")
             else:
-                for periodo in rsi_periodo:
+                for periodo in bollinger_periodo:
                     bollinger_high, bollinger_low = it.IndicadoresTecnicos().computar_Bollinger_Bands(data['close'], periodo)
                     data[f'bollinger_high_{periodo}'] = bollinger_high
                     data[f'bollinger_low_{periodo}'] = bollinger_low
                     data[f'bollinger_low_proportion_{periodo}'] = (data[f'bollinger_low_{periodo}'] - data['close']) / data['close']
                     data[f'bollinger_high_proportion_{periodo}'] = (data[f'bollinger_high_{periodo}'] - data['close']) / data['close']
-        
+
+        for index, row in data.iterrows():
+            if row['close'] < row['bollinger_low_20'] and row['RSI_14'] < 30 and row['MM_20'] > row['close']:
+                data.at[index, 'signal'] = 1
+            elif row['close'] > row['bollinger_high_20'] and row['RSI_14'] > 70 and row['MM_20'] < row['close']:
+                data.at[index, 'signal'] = -1
+
         return data
 
 
