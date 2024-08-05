@@ -9,7 +9,7 @@ class IndicadoresTecnicos():
     def computar_RSI(self, data, periodo=14):
         delta = data.diff().dropna()
         gain = (delta.where(delta>0, 0)).rolling(window=periodo).mean()
-        loss = (-delta.where(delta<0, 0)).roling(window=periodo).mean()
+        loss = (-delta.where(delta<0, 0)).rolling(window=periodo).mean()
         RS = gain/loss
 
         return 100 - (100/(1+RS))
