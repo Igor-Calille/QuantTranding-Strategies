@@ -1,7 +1,7 @@
 
 from typing import List, Union
 import pandas as pd
-import IndicadoresTecnicos as it
+import Estrategias.IndicadoresTecnicos as it
 
 """
 Descrição: Baseia-se na suposição de que os preços de um ativo tendem a voltar à sua média histórica.
@@ -59,6 +59,35 @@ Indicadores Usados: Médias Móveis, Índice de Força Relativa (RSI), MACD (Mov
 class MomentumTrading():
     def __init__(self):
         pass
+
+    def MT_1(self, data, media_movel: Union[List[int], None] = [20], rsi_periodo: Union[List[int], None] = [14], macd_params: Union[dict, None] = {'short_window': 12, 'long_window': 26, 'signal_window': 9}):
+        if media_movel is not None:
+            if not isinstance(media_movel, list):
+                raise ValueError("media_movel deve ser uma lista de inteiros")
+            else:
+                for periodo in media_movel:
+                    data[f"MM_{periodo}"] = it.IndicadoresTecnicos().computar_media_movel(data['close'], periodo)
+
+        if rsi_periodo is not None:
+            if not isinstance(rsi_periodo, list):
+                raise ValueError("rsi_periodo deve ser uma lista de inteiros")
+            else:
+                for periodo in rsi_periodo:
+                    data[f'RSI_{periodo}'] = it.IndicadoresTecnicos().computar_RSI(data['close'], periodo)
+
+        if macd_params is not None:
+            if not isinstance(macd_params, dict):
+                raise ValueError("macd_params deve ser um dicionário")
+            else:
+                data = it.IndicadoresTecnicos().compute_MACD(data, macd_params['short_window'], macd_params['long_window'], macd_params['signal_window'])
+
+        for index, row in data.iterrows():
+            if data['MACD'].iloc[index] > data['Signal_Line'].iloc[index] and row['RSI_14'] < 30 and row['MM_20'] > row['close']:
+                data.at[index, 'signal'] = 1
+            elif data['MACD'].iloc[index] < data['Signal_Line'].iloc[index] and row['RSI_14'] > 70 and row['MM_20'] < row['close']:
+                data.at[index, 'signal'] = -1
+
+        return data
 
 """
 Descrição: Envolve a identificação de preços anômalos entre ativos relacionados e a execução de operações para explorar essas ineficiências.
