@@ -1,0 +1,39 @@
+Empresas mais importantes dos EUA
+    Magnificent Seven (MAG 7)
+        Apple Inc. - AAPL
+        Microsoft Corporation - MSFT
+        Alphabet Inc. (Google) - GOOG / GOOGL
+        Amazon.com, Inc. - AMZN
+        NVIDIA Corporation - NVDA
+        Meta Platforms, Inc. (Facebook) - META
+        Tesla, Inc. - TSLA
+
+    Berkshire Hathaway Inc. - BRK-A / BRK-B
+    JPMorgan Chase & Co. - JPM
+    Johnson & Johnson - JNJ
+    Walmart Inc. - WMT
+    Visa Inc. - V
+    Procter & Gamble Co. - PG
+
+Empresas mais importantes do Brasil
+    Vale S.A. - VALE3.SA
+    Petrobras - Petróleo Brasileiro S.A. - PETR3.SA / PETR4.SA
+    Itaú Unibanco Holding S.A. - ITUB3.SA / ITUB4.SA
+    Banco Bradesco S.A. - BBDC3.SA / BBDC4.SA
+    Ambev S.A. - ABEV3.SA
+    Magazine Luiza S.A. - MGLU3.SA
+    B3 S.A. - Brasil, Bolsa, Balcão - B3SA3.SA
+    Banco Santander Brasil S.A. - SANB3.SA / SANB4.SA
+    JBS S.A. - JBSS3.SA
+    Eletrobras - Centrais Elétricas Brasileiras S.A. - ELET3.SA / ELET6.SA
+
+Principais Commodities
+    Ouro (Gold) - GC=F
+    Prata (Silver) - SI=F
+    Petróleo Brent (Brent Crude) - BZ=F
+    Petróleo WTI (West Texas Intermediate Crude) - CL=F
+    Gás Natural (Natural Gas) - NG=F
+    Café (Coffee) - KC=F
+    Açúcar (Sugar) - SB=F
+    Algodão (Cotton) - CT=F
+    Milho (Corn) - ZC=F

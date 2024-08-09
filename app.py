@@ -4,10 +4,10 @@ import Estrategias.CombinacaoIndicadoresTecnicos as cit
 import BackTesting as bt
 import dashboard as db
 
-data = si.yfinance().get_data_yfinance('AAPL', '2019-01-01')
+data = si.yfinance().get_data_yfinance('TSLA', '2019-01-01')
 
-# data = cit.MeanReversion().MR_1(data, media_movel=[20], rsi_periodo=[14], bollinger_periodo=[20])
-data = cit.MomentumTrading().MT_1(data)
+data = cit.MeanReversion().MR_1(data, media_movel=[20], rsi_periodo=[14], bollinger_periodo=[20])
+#data = cit.MomentumTrading().MT_1(data)
 
 
 data.to_csv('output/data.csv', index=False)

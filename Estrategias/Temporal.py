@@ -4,4 +4,4 @@ class TemporalEndOfMonth():
         pass
 
     def end_of_month(self, data):
-        
+        pass
