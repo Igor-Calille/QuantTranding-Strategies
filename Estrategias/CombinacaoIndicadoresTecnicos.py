@@ -37,8 +37,9 @@ class MeanReversion():
                     bollinger_high, bollinger_low = it.IndicadoresTecnicos().computar_Bollinger_Bands(data['close'], periodo)
                     data[f'bollinger_high_{periodo}'] = bollinger_high
                     data[f'bollinger_low_{periodo}'] = bollinger_low
-                    data[f'bollinger_low_proportion_{periodo}'] = (data[f'bollinger_low_{periodo}'] - data['close']) / data['close']
                     data[f'bollinger_high_proportion_{periodo}'] = (data[f'bollinger_high_{periodo}'] - data['close']) / data['close']
+                    data[f'bollinger_low_proportion_{periodo}'] = (data[f'bollinger_low_{periodo}'] - data['close']) / data['close']
+                    
 
         for index, row in data.iterrows():
             if row['close'] < row['bollinger_low_20'] and row['RSI_14'] < 30 and row['MM_20'] > row['close']:
