@@ -26,4 +26,3 @@ db.dashboard().plot_portfolio_price(data)
 
 
 
-#
