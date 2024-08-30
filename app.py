@@ -23,3 +23,6 @@ print("precision: ", precison)
 print("count successful: ", count)
 
 db.dashboard().plot_portfolio_price(data)
+
+
+#
