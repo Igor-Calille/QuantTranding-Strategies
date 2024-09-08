@@ -1,4 +1,4 @@
-
+#
 class IndicadoresTecnicos():
     def __init__(self):
         pass
